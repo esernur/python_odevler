@@ -9,3 +9,7 @@ final_notu=input('Final notunuz: ')
 f_n=int(final_notu)
 genel_not_ortalamasi=(0.30*v_n)+(0.50*f_n)+(0.20*d_t_n)
 print('Sevgili',ad_soyad,";",'\n','Yilsonu genel not ortalamaniz',genel_not_ortalamasi)
+dosya=open("ogrenciNotHesaplama.txt","w")
+print('Sevgili',ad_soyad,'\n','kacirdiginiz ders sayisi:',k_d,'\n','vize notunuz:',v_n,'\n','final notunuz:',f_n,'\n','GENEL NOT ORTALAMANIZ:',
+genel_not_ortalamasi,file=dosya)
+dosya.close()
