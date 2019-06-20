@@ -1,0 +1,17 @@
+isim=input('Isminizi yaziniz: ')
+sekil=('''
+          \    \                      /    /
+           \    \                    /    / 
+            \    \                  /    /
+             \    \                /    / 
+              \    \              /    / 
+               \    \            /    /
+                \    \          /    / 
+                 \    \        /    /
+                  \    \      /    /
+                   \    \    /    /
+                    \    \  /    /
+                     \    \/    /
+                     
+''')
+print(sekil,"\n","\t"*3,isim,"\n","\t"*3,"_"*len(isim),"\n",sekil,sep="")
