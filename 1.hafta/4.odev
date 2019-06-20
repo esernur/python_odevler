@@ -16,3 +16,9 @@ print('Yillik faiz tutariniz:',yillik_faiz_tutari,'\n',
       'Aylik faiz tutariniz:',aylik_faiz_tutari,'\n',
       'Gunluk faiz tutariniz:',gunluk_faiz_tutari,'\n',
       'Yillik toplam para miktariniz:',yillik_toplam_para_miktari,sep='')
+dosya=open('faizHesaplama.txt','w')
+print('Yillik faiz tutariniz:',yillik_faiz_tutari,'\n',
+      'Aylik faiz tutariniz:',aylik_faiz_tutari,'\n',
+      'Gunluk faiz tutariniz:',gunluk_faiz_tutari,'\n',
+      'Yillik toplam para miktariniz:',yillik_toplam_para_miktari,sep='',file=dosya) 
+dosya.close()
