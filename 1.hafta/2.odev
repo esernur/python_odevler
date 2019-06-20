@@ -1,0 +1,5 @@
+km=input('Kac kilometre yol aldiniz?: ')
+mil=1.6
+km2=int(km)
+fonksiyon=km2*mil
+print('Gittiginiz yolun mil cinsinden karsiligi',fonksiyon,'mildir.')
