@@ -1,0 +1,47 @@
+#Bir kullanici adi ve parola olusturma programi yaziyoruz.
+print('''
+                KULLANICI ADI VE PAROLA OLUSTURMA
+''')
+#gerekli onergeleri veriyoruz
+
+print('''
+@ Lutfen kullanici adinizin uzunlugunu 3 karakterden fazla, 18 karakterden
+  az olacak sekilde belirleyiniz.
+  
+@ Lutfen parolanizi 6 karakterden fazla, 12 karakterden az olacak
+  sekilde belirleyiniz.
+
+@ Cikmak icin "Q" tusuna basiniz.
+''')
+
+#Gerektiginde basa donmek icin bir dongu kuruyorum.
+
+while True:
+#kullanicidan uygun inputlari istiyorum.
+    kullanici_adi=input('''
+Yonergeye gore bir kullanici adi belirleyiniz(Cikmak "Q" basiniz):\t
+''')
+#cikis yapmak icin deger tanimliyorum ve donguyu kirarak cikis yapiyorum.
+    if kullanici_adi=="Q" or kullanici_adi=="q":
+        print("Cikis yapiliyor,lutfen bekleyiniz..")
+        break
+#devam etmem durumunda yeni verileri aliyorum.
+    parola=input("Yonergeye uygun bir parola belileyiniz:\t")
+#verilerin uygunlugunu denetliyorum.
+#istenilenleri saglarsa verileri ekrana printliyorum.Ayni zamanda bir dosyaya da kaydediyorum
+#istenilenleri sagladigi icinde donguyu kuruyorum.
+    if 18>len(kullanici_adi)>3 and 12>len(parola)>3:
+        print("\t\tTebrikler!  ","\n","Kullanici adiniz: ",kullanici_adi,"\n","Parolaniz:  ",parola,sep="")
+        dosya=open("username_parola.txt","w")
+        print("Kullanici Adi:\t",kullanici_adi,'\n',"Parola:\t",parola,sep="",file=dosya)
+        dosya.close()
+        break
+#hatali durumlari tanimlayip, bir hata durumunda geri donuyorum.
+    else:
+        print("\n\nYanlis bir giris yaptiniz, yonergelere dikkat ederek tekrardan deneyiniz")
+    
+
+    
+    
+    
+  
