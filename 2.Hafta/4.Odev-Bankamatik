@@ -1,0 +1,30 @@
+print('''
+                     !!! HOSGELDINIZ !!!
+''')
+anamenu=('''
+BAKIYE KONTROLU---------------------->    1
+PARA YATIRMA------------------------->    2   
+PARA CEKME--------------------------->    3
+''')
+print(anamenu)
+while True:
+    islem=int(input("Lutfen yapmak istediginiz islemi giriniz:\t"))
+    if islem==1:
+        print("Hesabinizda 1000 Euro para bulunmaktadir.")
+        
+    elif islem==2:
+        giris=int(input("Yatirmak istediginiz tutari giriniz:\t"))
+        print("Hesabiniza",giris,"Euro para yatirildi.")
+        print("Yeni bakiyeniz:",giris+1000,"Euro")
+        
+        
+    elif islem==3:
+        cekme=int(input("Lutfen cekmek istediginiz tutari giriniz:\t"))
+        if cekme>1000:
+            print(" Bakiyeniz yetersiz,lutfen tekrar deneyiniz.")
+        else:
+            print("Hesabinizdan",cekme,"Euro para cekilmistir")
+            print("Yeni bakiyeniz:",1000-cekme,"Euro")
+    else:
+        print("Hatali bir islem yaptiniz lutfen asagidaki yonergeye gore tekrar giriniz!")
+        print(anamenu)
