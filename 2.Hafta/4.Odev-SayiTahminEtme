@@ -1,0 +1,49 @@
+print('''
+                SAYI TAHMIN ETME OYUNU
+''')
+print('''
+1 ile 10 arasinda secilen sayiyi tahmin ediniz.
+ @ Bir yada iki denemede tahmin ederseniz ★★★  kazanacaksiniz
+ @ Uc yada dort denemede tahmin ederseniz ★★  kazanacaksiniz
+ @ Bes denemede tahmin ederseniz ★ kazanacaksiniz.
+
+ HAYDI BASLAYALIM !!!
+ ''')
+#Bu kod tek bir sabit sayi icindir.Ben burada tahmin edilmesi gereken
+#sayiyi 5 olarak tanimliyorum.
+sayi=5
+#Dongumu olusturacak bir sayi belirliyorum bu sayiyi a+=ile artan bir
+#dizi icine eklemis oluyorum.Her basarisiz sonucta a+1 deger daha alacak.
+a=0
+while a < 10:
+    tahmin=int(input("Tahmininiz:\t"))
+#yanlis veri girme durumunu tanimliyorum.   
+    if tahmin>10 or tahmin<1:
+        print("Yanlis bir veri girisi yaptiniz.Lutfen 1 ile 10 arasinda bir sayi secini.")
+#a'yi dongu icin arttiriyorum.
+    a+=1
+#eger dongu 1 veya 2 kere gerceklesirse ilk durumu tanimliyorum ve dongu degerini
+#degistirip donguyu kiriyorum.Ayni islemi tum basamaklar icin yapiyorum.    
+    if 3>a>0 and sayi==tahmin:
+        print(" TEBRIKLER ★★★  KAZANDINIZ !!!")
+        a=15
+        
+    elif 5>a>2 and sayi==tahmin:
+        print("TEBRIKLER ★★  KAZANDINIZ !!!")
+        a=15
+
+    elif a==5 and sayi==tahmin:
+        print("TEBRIKLER ★ KAZANDINIZ!!!")
+        a=15
+#5.denemede de basarisiz olunca bunu belirtiyorum ve cikis yapiyorum.
+    elif a>=5 and sayi!=tahmin:
+        print("Deneme hakkiniz kalmadi, cikis yapiliyor!!")
+        a=15
+ 
+            
+        
+        
+    
+    
+
+      
