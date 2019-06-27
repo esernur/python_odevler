@@ -1,0 +1,37 @@
+#oncelikle programin basinda gorunen baslik ve aciklama kismini print yaptiriyoruz
+#donguyu aciklamadan sonra ekleyecegim
+
+print('''
+                    UZAKLIK BIRIMI DONUSUMU PROGRAMI
+                    
+  KM'den MIL'e donusum yapmak istiyorsaniz 1'e,
+  MIL'den KM'ye donusum yapmak istiyorsaniz 2'ye,
+  Cikmak icin 3'e basiniz.
+''')
+#bir anahtar tanimlayacagim cikmak istedigimde anahtari degistirecegim.
+anahtar="sernur"
+while anahtar=="sernur":
+#islem yapabilmek icin bir veri girisi almaliyim. Inputla bunu sagliyorum.
+    veri=int(input("Lutfen yapmak istediginiz islem numarasini giriniz:\t"))
+    if veri==3:
+#cikis yapabilmek icin donguyu degistiriyorum.
+        print("Cikis yapiliyor lutfen bekleyiniz.")
+        anahtar="emine"
+    elif veri==1:
+#donusum yapilacak verilerin girisini sagliyorum ve fonksiyonlari kuruyorum.
+        gittigi_km=float(input("Lutfen donusturmek istediginiz veriyi km cinsinden giriniz:\t"))
+        mil=1.6
+        fonksiyon=gittigi_km/mil
+        print(gittigi_km," km=",fonksiyon," mil",sep="")
+        
+    elif veri==2:
+        verilen_mil=float(input("Lutfen donusturmek istediginiz veriyi mil cinsinden giriniz:\t"))
+        fonksiyon2=verilen_mil*1.6
+        print(verilen_mil," mil=",fonksiyon2," km",sep="")
+#verilen hicbir durumu saglamazsa kullanici uyariliyor ve yeniden veri girisi yapmasi isteniyor.
+    else:
+        print("Yanlis bir veri girisi yaptiniz.Lutfen tekrar deneyiniz.")
+        
+                       
+        
+        
