@@ -1,0 +1,43 @@
+#aciklama yapiyorum.
+print('''
+                          !!!  FIZZ BUZZ  !!!
+
+                          
+ 0-100 arasindaki sayilar icin;                            
+*3 ile tam bolunen sayilarin yerinde FIZZ,
+*5 ile tam bolunen sayilarin yerinde BUZZ,
+*3 ve 5 ile tam bolunen sayilarin yerinde FIZZBUZZ yazacaktir.
+ Cikmak icin 'Q' tusuna bas.
+
+HAYDI YAPALIM!! 
+''')
+while True:
+
+    basla=input("\nBIR TUSA BAS !!(Cikis icin 'Q')\t")
+
+    if basla=="Q" or basla=="q":
+        print("CIKIS YAPILIYOR..")
+        break
+
+    else:
+        for i in range(101):
+            
+            if i%15==0:
+                i="FIZZBUZZ"
+               
+
+            elif i%5==0:
+                i="BUZZ"
+               
+
+            elif i%3==0:
+                i="FIZZ"
+
+            print(i)
+          
+            
+                
+
+
+
+
