@@ -1,0 +1,45 @@
+#HESAP OLUSTURMA
+#istenilenler ve dikkat edilmesi gereken noktalar aciklama olarak print ediliyor.
+print('''
+               HESAP OLUSTURMA MODULUNE HOSGELDINIZ
+               
+*Lutfen sizden istenen bilgileri giriniz.
+*Daha once kullanilmis bir kullanici adi olursa sistem hata verecektir.
+ Bu durumda tekrar deneyiniz.
+*Cikis yapmak icin "Q" basiniz.
+ ''')
+
+#oncelikle veri alabilmek icin input girisi yapiyorum.
+
+kullanici_adi=input("Kullanici Adi(Cikis yapmak icin 'Q' tusuna basin):\t")
+parola=input("Parola(Cikis yapmak icin 'Q' tusuna basin):\t")
+
+#bu kullanici adini kaydedebilmek icin bir dosya aciyorum.
+
+dosya=open("kayit_dosyasi.txt", "a+")
+
+#cikis yapmak icin Q tusuna basilma durumunda yapilacaklari tanimliyorum.
+#cikis yapabilmek icin bir dongu kuruyorum ve onu kiriyorum.
+
+while True:
+    
+    if kullanici_adi=="q" or kullanici_adi=="Q":
+        print("Cikis yapiliyor...")
+        break
+    else:
+        dosya=open("kayit_dosyasi.txt")
+        dosya_satir=dosya.readlines()
+        for i in dosya_satir:
+            if kullanici_adi in i:
+                print("Bu kullanici adi daha once kullanilmistir.Tekrar deneyiniz.")
+
+            elif kullanici_adi not in i:
+                dosya.write(kullanici_adi)
+                dosya.write(parola)
+                dosya.close()
+                print("Tebrikler..","\n","Kullanici Adiniz:\t",kullanici_adi,"\n",
+                         "Parolaniz:\t",parola,sep="")
+
+        
+
+        
