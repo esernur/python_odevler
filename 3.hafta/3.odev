@@ -1,0 +1,32 @@
+#oncelikle ayiklama yapacagim dosyayi aciyorum.
+
+dosya=open("futbolcular.txt")
+
+#tum belgeyi satir satir okumak icin readlines i kullaniyorum.
+
+dosya_satirlar=dosya.readlines()
+
+#tum satirlardaki degerlerin okunup degerlendirilmesi icin for dongusunu kullaniyorum.
+
+for i in dosya_satirlar:
+    
+#satirlarda fenerbahce,galatasaray veya besiktas geciyorsa ayri ayri, ayni islemi uyguluyorum.
+#yazilabilir bir dosya aciyorum.
+#ayiklanan i degerlerini write ile dosyaya yazdiriyorum.
+#dosyayi close ile kapatiyorum.
+    
+    if "Fenerbahce" in i:
+        fb_dosya=open("fenerbahce.txt","a")
+        fb_dosya.write(i)
+        fb_dosya.close()
+    elif "Galatasaray" in i:
+        gs_dosya=open("galatasaray.txt","a")
+        gs_dosya.write(i)
+        gs_dosya.close()
+    elif "Besiktas" in i:
+        bjk_dosya=open("besiktas.txt","a")
+        bjk_dosya.write(i)
+        bjk_dosya.close()
+        
+
+ 
