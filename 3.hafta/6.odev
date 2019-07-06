@@ -1,0 +1,28 @@
+#aciklama giriyorum.
+print('''
+                                ASAL SAYI MI ?
+                                
+    *Sectiginiz asal sayi olup olmadigini ogrenin !
+    *Cikmak icin 'Q' tusuna basiniz.
+''')
+
+#dongu baslatiyorum.
+
+while True:
+    veri=input("Bir sayi giriniz(Cikmak icin 'Q' tusuna basiniz):\t")
+
+    if veri=="Q" or veri=="q":
+        print("Cikis yapiliyor...")
+        break
+
+    else:
+        for i in range(2,int(veri)):
+            if int(veri)%i==0:
+                print("BU BIR ASAL SAYI DEGILDIR!")
+                break
+
+            else:
+                print("BU BIR ASAL SAYIDIR")
+                break
+                
+            
