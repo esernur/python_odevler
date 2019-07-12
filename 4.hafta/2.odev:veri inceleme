@@ -1,0 +1,36 @@
+#oncelikle aciklama yaziyoruz.
+print('''
+                                VERI INCELEME
+*Giris yaptiginiz veri icinde kac kucuk harf,kac buyuk harf,kac sayi,kac ozel karakter var? HADI BULALIM!!
+''')
+#dongu kuruyorum.Ve bir veri aliyorum.
+sayi=0
+buyuk_harf=0
+kucuk_harf=0
+diger=0
+#dongu kuruyorum
+while True :
+    veri=input('''Lutfen bir veri girisi yapiniz:\t''')
+#verileri incelemeye basliyorum.Istenilen veriye ulasildigi zaman yukarida olusturdugum dosyaya ekliyorum.
+    for i in veri:
+        if i.isdigit()==True:
+            sayi+=1
+    
+        if i.isupper()==True:
+            buyuk_harf+=1
+    
+        if i.islower()==True:
+            kucuk_harf+=1
+
+        if i.isdigit()==False and i.isupper()==False and i.islower()==False:
+            diger+=1
+#son olarak elimdeki verileri yazdiriyorum.
+    print("buyuk harf sayisi=",buyuk_harf)
+    print("kucuk harf sayisi=",kucuk_harf)
+    print("sayi sayisi=",sayi) 
+    print("diger karakter sayisi=",diger)
+            
+            
+            
+        
+            
