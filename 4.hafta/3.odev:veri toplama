@@ -1,0 +1,15 @@
+#aciklama yapiyorum.
+print('''
+                        VERI TOPLAMA
+*Girdiginiz verideki rakamlari topluyoruz.HAYDI BASLAYALIM!!
+''')
+#verileri ekleyebilmek icin bos bir veri tanimliyorum.
+#dongu baslatiyorum.
+while True:
+    toplam=0
+    veri=input("Lutfen bir veri giriniz:\t")
+    for i in veri:
+        if i.isdigit()==True:
+            toplam+=int(i)
+            
+    print(toplam)
