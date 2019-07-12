@@ -1,0 +1,12 @@
+#oncelikle bir aciklama yaziyoruz.
+print('''
+                         BUYUK HARFE CEVIRELIM
+*Bu program yazdiginiz kucuk harfleri buyuk harfe cevirir.Haydi deneyelim!!!
+''')
+#dongu baslatiyoruz.
+while True:
+    veri=input('''Lutfen kucuk harflerle bir seyler yaziniz\t''')
+#girilen veriyi buyuk harfe ceviriyoruz.
+    buyuk_veri=veri.upper()
+#veriyi yazdiriyoruz.
+    print(buyuk_veri)
