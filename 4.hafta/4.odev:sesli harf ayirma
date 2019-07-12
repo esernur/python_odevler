@@ -1,0 +1,22 @@
+#oncelikle okuma modunda dosyayi aciyorum.
+dosya=open("futbolcular.txt","r")
+#tum satirlari okutuyorum.
+satir_okuma=dosya.readlines()
+#sesli harfleri tanimliyorum.
+sesli_harf="AEIOUaeiou"
+#satirlari tek tek okutuyorum.
+for i in satir_okuma:
+#sesli harfleri tek tek okutuyorum.
+    for j in sesli_harf:
+#sesli harfle baslayanlari belirliyorum.
+        if i.startswith(j):
+#dosyayi yeni bir dosyaya kaydetmek icin uzerine ekleme yapabilecek ve
+#okuyabilecek bir modda aciyorum.
+            yenidosya=open("sesliharfut.txt","a+")
+#verileri dosyaya yaziyorum ve dosyayi kapatiyorum.
+            yenidosya.write(i)
+            yenidosya.close()
+#daha net gorebilmek icin ekrana yazdiriyorum.
+            print(i)
+            
+                
