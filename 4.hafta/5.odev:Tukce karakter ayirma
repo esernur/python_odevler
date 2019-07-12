@@ -1,0 +1,14 @@
+#oncelikle okuma modunda dosya acilir.
+dosya=open("futbolcularturkce.txt",'r')
+#dosya tek tek okunur.
+dosya_karakterler=dosya.read()
+#donusum yapilacak kumeler belirlenir.
+kaynak = "şçöğüıŞÇÖĞÜİ"
+hedef = "scoguiSCOGUI"
+çeviri_tablosu = str.maketrans(kaynak, hedef)
+print(dosya_karakterler.translate(çeviri_tablosu))
+#yeni veriler yeni acilan yazilabilir moddaki dosyaya yazilir.
+yenidosya=open("futbolcularyeni.txt","a+")
+yenidosya.write(dosya_karakterler.translate(çeviri_tablosu))
+yenidosya.close()
+
