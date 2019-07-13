@@ -27,7 +27,7 @@ while True :
 #son olarak elimdeki verileri yazdiriyorum.
     print("buyuk harf sayisi=",buyuk_harf)
     print("kucuk harf sayisi=",kucuk_harf)
-    print("sayi sayisi=",sayi) 
+    print("rakam sayisi=",sayi) 
     print("diger karakter sayisi=",diger)
             
             
