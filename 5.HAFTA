@@ -1,0 +1,59 @@
+#ODEV2
+
+sayi="1453"
+
+sayi=list(sayi)
+
+tahmin=list(input("tahmininiz: "))
+
+dogru_sayi=0
+
+dogru_yer=0
+
+for elemanlar in tahmin:
+        
+    if elemanlar in sayi:
+
+        if sayi[0]==tahmin[0]:
+            dogru_yer+=1
+                
+        if sayi[1]==tahmin[1]:
+            dogru_yer+=1
+                
+        if sayi[2]==tahmin[2]:
+            dogru_yer+=1
+
+        if sayi[3]==tahmin[3]:
+            dogru_yer+=1
+
+        elif sayi.index(elemanlar)!=tahmin.index(elemanlar):
+
+            dogru_sayi+=1
+            
+    print("-{} dogru sayi kullaniminiz,{} dogru yer kullaniminiz".format(dogru_sayi,dogru_yer))
+    
+                 
+    break
+
+
+
+#ODEV3
+
+
+#oncelikle listelerimi olusturuyoru.
+liste1=["1","2","3","4","5","6","7","8","9","10"]
+liste2=["a","b","c","d","e","f","g","h","i","j"]
+#yeni listeler olustumak icin bos listeler olusturuyorum.
+yeniliste1=[]
+yeniliste2=[]
+#listeler ustunde dongu kuruyorum
+for i in liste1:
+    for j in liste2:
+#her bir eleman kombinasyonunu birlestirerek yeni listelere ekliyorum.
+#bu listelerden biri harfle, digeri sayiyla basliyor.
+        yeniliste1.append(i+j)
+        yeniliste2.append(j+i)
+#tum dongu islemi tamamlandiktan sonra nihai sonucu yazdiriyorum.
+print(yeniliste1)
+print(yeniliste2)
+  
