@@ -1,0 +1,12 @@
+def tam_bolen():
+    sayi=int(input("bir sayi giriniz: "))
+    kume=[]
+    for i in range(1,sayi+1):
+
+        if sayi%i==0:
+            kume.append(i)
+    print("{} sayisinin tam bolenleri {}".format(sayi,kume))
+
+tam_bolen()
+
+        
