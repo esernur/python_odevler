@@ -1,0 +1,34 @@
+def ebob(sayi,sayi2):
+
+    kume=[]
+    for i in range(1,sayi+1):
+
+        if sayi%i==0:
+            kume.append(i)
+        else:
+            continue
+
+    kume2=[]
+
+    for k in range(1,sayi2+1):
+
+        if sayi2%k==0:
+            kume2.append(k)
+   
+    kume3=[]
+
+    for a in kume:
+        for b in kume2:
+
+            if a==b:
+                kume3.append(b)
+            else:
+                continue
+
+    buyuk=max(kume3)
+
+    print("\nBu iki sayinin en buyuk ortak boleni(ebob) {}".format(buyuk))
+
+ebob(88,44)
+
+
