@@ -1,0 +1,39 @@
+def sayi_okunusu(sayi):
+    
+    sayi1=str(sayi)   
+    ayri=list(sayi1)
+    
+    a=ayri[0]
+    b=ayri[1]
+
+   
+    
+
+    sozluk1={"1":"bir",
+            "2":"iki",
+            "3":"uc",
+            "4":"dort",
+            "5":"bes",
+            "6":"alti",
+            "7":"yedi",
+            "8":"sekiz",
+            "9":"dokuz",
+            "0":""}
+    
+    sozluk2={"1":"on",
+             "2":"yirmi",
+             "3":"otuz",
+             "4":"kirk",
+             "5":"elli",
+             "6":"altmis",
+             "7":"yetmis",
+             "8":"seksen",
+             "9":"doksan"}
+
+    print(sozluk2[a],sozluk1[b])
+    
+    
+    
+    
+sayi_okunusu(90)
+    
