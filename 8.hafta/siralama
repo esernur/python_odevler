@@ -1,0 +1,10 @@
+def siralama(*args):
+    veri=str(args)
+    liste2=veri.split("-")
+    liste2.sort()
+    veri1=str(liste2)
+    print(veri1,sep="-")
+#TAM OLARAK CALISMIYOR.
+
+siralama("green-red-yellow-black-white")
+
