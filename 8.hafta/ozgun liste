@@ -1,0 +1,11 @@
+def ozgun_eleman(*args):
+    liste=list(args)
+    ozgun_liste=[]
+    for i in liste:
+        if i not in ozgun_liste:
+            ozgun_liste.append(i)
+            ozgun_liste.sort()
+
+    print(ozgun_liste)
+    
+ozgun_eleman(1,5,8,88,8,5,1,2,9,6)
