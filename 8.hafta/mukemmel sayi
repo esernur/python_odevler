@@ -1,0 +1,28 @@
+def mukemmel_sayi():
+    sayi=int(input("bir sayi giriniz: "))
+    kume=0
+    yeni_kume=0
+    liste=[]
+    k=range(1,1001)
+    for i in range(1,sayi):
+
+        if sayi%i==0:
+            kume+=i      
+
+    if kume==sayi:
+        print("Bu bir mukemmel sayi!")
+
+    else:
+        print("Bu bir mukemmel sayi degil!")
+#BU KISMI CALISMIYOR
+    for a in k:
+        for y in range(1,a):
+            if a%y==0:
+                yeni_kume+=y
+            
+                if a==yeni_kume:
+                    
+        
+            
+                      
+mukemmel_sayi()
