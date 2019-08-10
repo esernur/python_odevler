@@ -1,0 +1,25 @@
+def buyuk_kucuk(veri):
+    ayri=list(veri)
+    buyuk=[]
+    kucuk=[]
+    a=0
+    b=0
+    for i in ayri:
+
+        if i.isupper()==True:
+            buyuk.append(i)
+            a+=1
+        
+            
+        else:
+            kucuk.append(i)
+            b+=1
+           
+        
+    print("{} kelimesindeki buyuk harf sayisi {}; kucuk harf sayisi {}".format(veri,a,b))
+            
+
+buyuk_kucuk("EmiNe")
+
+        
+
