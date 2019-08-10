@@ -1,0 +1,24 @@
+def ekok(sayi1,sayi2):
+    carpim=range(1,1000)
+    liste1=[]
+    liste2=[]
+    liste3=[]
+    for i in carpim:
+        x=sayi1*i
+        liste1.append(x)
+        
+        y=sayi2*i
+        liste2.append(y)
+
+    for a in liste1:
+        for b in liste2:
+            if a==b:
+                liste3.append(b)
+                ekok=min(liste3)
+                
+    print("Bu iki sayinin en kucuk ortak kati(ekok) {}".format(ekok))
+                    
+    
+    
+        
+ekok(8,7)
