@@ -1,0 +1,12 @@
+def pisagor_ucgen():
+    for birinci_kenar in range(1,101):
+        for ikinci_kenar in range(1,101):
+            a=(birinci_kenar**2)+(ikinci_kenar**2)
+            uzun_kenar=a**0.5
+            print(birinci_kenar,"-",ikinci_kenar,"-",uzun_kenar)
+
+pisagor_ucgen()
+    
+
+    
+
