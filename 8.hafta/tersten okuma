@@ -1,0 +1,13 @@
+def tersten_okuma(kelime):
+    
+    ters=kelime[::-1]
+    
+    if kelime==ters:
+        print(True)
+
+    else:
+        print(False)
+    
+
+tersten_okuma("utrecht")
+tersten_okuma("madam")
