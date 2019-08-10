@@ -1,0 +1,8 @@
+def faktoriyel(sayi):
+    
+    carpim=1
+    for a in range(1,sayi+1):
+        carpim*=a
+    print("{} sayisinin faktoriyeli {}".format(sayi,carpim))
+
+faktoriyel(10)
