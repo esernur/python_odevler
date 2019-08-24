@@ -1,0 +1,115 @@
+#PROBLEMLER:
+#OYUN 15 YANLISTAN ONCE BITMIYOR.
+#RANDOM YOK.
+#TABLO GORUNTUSU ISTENILEN GIBI DEGIL. 
+
+
+from time import sleep
+
+hak=15
+hafiza=[]
+koordinatlar=['13','27','28','29','32','42','52','62','55','65','79','48','58','91','92','93','96','97','98','99']
+
+def giris():
+    print("""
+                AMIRAL BATTI OYUNUNA HOSGELDINIZ
+  *Deniz olarak varsayacagimiz 10x10'luk bir tablomuz mevcuttur.
+  *Bu tabloya 2 adet 4 birimlik, 2 adet 3 birimlik, 2 adet 2 birimlik ve
+   2 adet 1 birimlik gemiler yerlestirilmistir.
+  *Sizden istenen tablo ustunde herhangi bir noktaya hamlede bulunmaniz.
+  *15 basarisiz deneme hakkiniz var.
+  *Oyun sonunda basari durumuzu gorebilirsiniz.
+  """)
+
+deniz=[ [' ','1','2','3','4','5','6','7','8','9','10'],
+        ['1 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['2 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['3 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['4 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['5 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['6 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['7 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['8 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['9 ',"_", "_", "_","_", "_", "_","_", "_", "_","_"],
+        ['10',"_", "_", "_","_", "_", "_","_", "_", "_","_"] ]
+
+def tablo():
+       for i in range(0,11):
+        print(deniz[i])
+
+def hak_kullanma():
+    print("Lutfen once bir satir ardindan sutun giriniz.\n")
+    global giris
+    global giris2
+    giris=int(input("1-10 sayilari arasinda bir satir giriniz:  "))
+    giris2=int(input("1-10 sayilari arasinda bir sutun giriniz:  "))
+    
+
+
+    
+    
+
+def isabetli_atis():
+    print("\nBravo gemiyi vurdunuz!\n\n")
+    deniz[giris][giris2]="O"
+    tablo()
+
+def iska_atis():
+    print("\nIskaladiniz! {} yanlis yapma hakkiniz kaldi.\nLutfen 5 sn sonra tekrar deneyiniz.\n".format(hak-1))
+    deniz[giris][giris2]="X"
+    tablo()
+    sleep(5)
+  
+   
+
+
+def kontrol():
+    if giris==1 and giris2==3 or giris==2 and 6<giris2<10 or 2<giris<7 and giris2==2 or 4<giris<7 and giris2==5 or giris==7 and giris2==9 or 3<giris<6 and giris2==8 or giris==9 and 0<giris2<4 or giris==9 and 5<giris2<10:
+        isabetli_atis()
+    else:
+        iska_atis()
+        global hak
+        hak-=1
+
+def oyunu_bitirme():
+    
+    if koordinatlar<=hafiza:
+        print("OYUNU KAZANDINIZ")
+      
+
+    else:
+        print("OYUNU KAYBETTINIZ")
+      
+giris()     
+tablo()
+        
+while hak>0:
+    
+    hak_kullanma()
+    
+    if  giris>10 or giris<1 or giris2>10 or giris2<1 or str(giris)=="" or str(giris2)=="" :
+        print("Yanlis bir veri girisi yaptiniz.Lutfen tekrar deneyiniz.")
+        continue
+    
+    if str(giris)+str(giris2) in hafiza:
+        print("Bu veriyi daha once girdiniz.Lutfen tekrar deneyiniz")
+        continue
+    else:
+        hafiza.append(str(giris)+str(giris2))
+        
+    kontrol()
+    
+ 
+oyunu_bitirme()
+
+
+    
+
+
+    
+                   
+
+
+
+
+
