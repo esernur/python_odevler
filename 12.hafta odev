@@ -1,0 +1,75 @@
+import time
+class Tasit():
+    __tasit_miktari=[]  #gizli hale getirmek icin onune iki alt tire konuldu.
+
+    def __init__(self,motor_gucu,koltuk_sayisi,km_durumu,model,satis_yili,tekerlek_sayisi):  #istenilen ozellikler tanimlandi
+        self.motor_gucu=motor_gucu
+        self.koltuk_sayisi=koltuk_sayisi
+        self.km_durumu=km_durumu
+        self.model=model
+        self.satis_yili=satis_yili
+        self.tekerlek_sayisi=4      #sabit olmasi istendigi icin tanimlandi.
+        self.__tasit_miktari.append(self.model) #eklenen her tasitin tasit miktar listesine eklenmesi saglandi.
+
+    def koltuk_sayisi_goster(self):
+        return("Koltuk sayisi: {}".format(self.koltuk_sayisi))  #formatla verilen degerler metotlara aktarildi. 
+
+    def model_goster(self):
+        return("Model: {}".format(self.model))
+
+    def km_durumu_al(self):
+        return "Km Durumu: {}".format(self.km_durumu)
+    
+    def tasit_miktarini_guncelle(self):
+        
+        miktar=len(self.__tasit_miktari)      #arabanin modeli tasit_miktari listesine eklendi ve bu liste sayilarak tasit miktarina ulasildi.
+        print("Tasit miktari guncelleniyor...")
+        time.sleep(1)
+        return ("Yeni tasit miktari: {}".format(miktar))
+
+    @classmethod
+    def tasit_miktar_sinif(cls):     #instance attributes altina @classmethod kullanilarak bir sinif metodu tanimlandi. 
+        return "Tasit miktari: {}".format(len(cls.__tasit_miktari)) 
+
+
+
+class Araba(Tasit):
+
+    def __init__(self,motor_gucu,koltuk_sayisi,km_durumu,model,satis_yili,tekerlek_sayisi,max_hiz):  #ozellikler miras alindi ve max_hiz eklendi.
+        
+        super().__init__(motor_gucu,koltuk_sayisi,km_durumu,model,satis_yili,tekerlek_sayisi) #miras alinan ozelliklerin kaybedilmemesi saglandi. 
+        
+        self.max_hiz=max_hiz
+
+    def arabayi_durdur(self):
+        print("Lutfen bekleyiniz...")
+        time.sleep(2)
+        return ("Araba durduruldu!")
+
+    def gaza_bas(self):
+        return 'Araba hizlaniyor..'
+
+    def arabayi_yavaslat(self):
+        return ("Araba yavasliyor!")
+
+    def arabanin_durumunu_goster(self):
+        
+        if issubclass(Araba,Tasit)==True:    #alt sinif olup olmadigi kontrol edildi. 
+            return('Bu sinif Tasit sinifindan miras alinmistir')
+
+        else:
+            return('Araba sinifi Tasit sinifindan miras alinmamistir.')
+
+    def model_goster(self):  #ust sinifta tanimlanan model_goster metodu override edilip yeniden tanimlandi.
+        
+        return("Araba sinifinin methodu…{}".format(self.model))
+
+
+
+            
+
+
+        
+      
+              
+
