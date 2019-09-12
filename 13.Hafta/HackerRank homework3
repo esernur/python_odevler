@@ -1,0 +1,40 @@
+print("""
+'n' kumenin eleman sayisini,'k' bolum yapacak sayiyi ifade eder
+2 <= n <= 100
+1 <= n <= 100
+1 <= ar[i] <= 100  araligini saglayiniz.""")
+
+veri=input('\nSirasiyla  n ve k verilerini giriniz.Arada bir bosluk birakiniz: ')
+data=veri.split(' ') #n ve k verileri aliyorum. bosluktan ayirip bir liste haline getiriyorum.
+n=int(data[0]) #listeden aldigim verileri int ceviriyorum.n ve k ya atiyorum.
+k=int(data[1])
+print('n={}'.format(n)) #verileri gosteriyorum
+print('k={}'.format(k))
+
+kume=input('{} sayisi kadar kume elemanini aralarinda bosluk birakarak giriniz: '.format(n))
+ar=kume.split(' ') #liste elemanlarini aliyorum.
+cikti_listesi=[] #ileride sayisini almak icin bos liste olusturuyorum. 
+if len(ar)==n and 2<=n<=100 and 1<=k<=100: #kume eleman sayisi istenen kadar mi verilmis onu kontrol ediyorum.Ayrica kisitlamalari uyguluyorum.
+    for i in range(n): #eleman sayisi kadar range belirliyorum listede dolanmak icin.           
+        for j in range(n):
+            if 1<=int(ar[i])<=100: #eleman kisitlamasini uyguluyorum
+                if i!=j and int(ar[i])>int(ar[j]): #bir elemani sabit tutup digeri ustunde dolandirirken kendini secmesini engelliyorum.Ayrica kendinden buyuk olanini almasini sagliyorum
+                    toplam=int(ar[i])+int(ar[j])
+                    if toplam%k==0: #elemanlari topluyorum ve toplamin verilen k sayisina tam bolunup bolunmedigini kontrol ediyorum.
+                        yeni_list=[] #her uyumlu sayi ciftini atamak icin liste tanimliyorum.
+                        yeni_list.append(int(ar[j]))#sirasiyla once kucuk, sonra buyuk veriyi atiyorum.
+                        yeni_list.append(int(ar[i]))
+                        cikti_listesi.append(yeni_list) #olusan tum bu listeleri baska bir listeye atiyorum. 
+                        
+    
+                        
+            else:
+                print('Aralik disinda bir kume elemani girdiniz')
+                break   #kume sayisinin kisitlanin disinda bir veri girisi olursa uyariyor ama burda bi sikinti var.break dememe ragmen tum listeyi dolanip oyle bitiriyor. 
+            
+    print(len(cikti_listesi)) #listeye atanan tum elemanlar sayilip basiliyor.
+    
+else:
+    print('Yanlis veya eksik bir veri girisi yaptiniz.Lutfen tekrar deneyiniz') #kume sayisi eksik, fazla veya aralik disinda bir veri girisi olursa uyari veriliyor.
+      
+            
