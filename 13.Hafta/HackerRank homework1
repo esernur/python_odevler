@@ -1,0 +1,16 @@
+while True:
+    n=int(input('Please enter the number of digits: ')) 
+    if 0<n<=100:#sinirlandirmasini yapiyorum.
+        for k in range(1,n+1): #bosluk sayilarini belirlemek icin bir k olusturuyorum.En buyuk degerininde n olmasini sagliyorum negatif bir deger almamasi icin.
+            print(((n-k)*" ")+('#'*(n-(n-k)))) #n sayisindan yavas yavas bir az bosluk birakip her basamakta '#' sayisini arttiriyorum.  
+        
+       
+    else:
+        print('You have entered the wrong data, please try again')
+        continue
+
+    break
+        
+
+        
+
