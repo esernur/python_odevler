@@ -1,0 +1,90 @@
+def ortak_kat(sayi1,sayi2): #iki sayinin ortak katini bulabilmek icin bir ortak kat fonk tanimladim.
+    carpim=range(1,100)
+    liste1=[]
+    liste2=[]
+    global liste3 #en sondaki fonk. kullanabilmek icin global hale getirdim.
+    liste3=[]
+    for i in carpim: #girilen sayi 100 e kadar carpiliyor ve listeye atiliyor.ayni sey iki veri icinde yapiliyor.
+        x=sayi1*i
+        liste1.append(x)
+        
+        y=sayi2*i
+        liste2.append(y)
+
+    for a in liste1:
+        for b in liste2:
+            if a==b: #ortak olanlar bir listeye atiliyor
+                liste3.append(b)
+    
+
+def ortak_bolen(sayi,sayi2,sayi3):
+
+    kume=[]
+    for i in range(1,sayi+1): #ortak olan bolenler her sayi icin belilenip listelere atiliyor
+
+        if sayi%i==0:
+            kume.append(i)
+        else:
+            continue
+
+    kume2=[]
+
+    for k in range(1,sayi2+1):
+
+        if sayi2%k==0:
+            kume2.append(k)
+    kume3=[]
+
+    for l in range(1,sayi3+1):
+
+        if sayi3%l==0:
+            kume3.append(l)        
+            
+            
+    global kume4 #daha sonra kullanilacagindan global hale getiriliyor
+    kume4=[]
+
+    for a in kume:
+        for b in kume2:
+            for c in kume3:
+
+                if a==b==c: #ortak olanlar bir listeye atiliyor
+                    kume4.append(b)
+                else:
+                    continue
+    
+
+def getTotalX():
+    kume_sayilari=input() #kume sayilari icin input aliniyor.Bunu kontrol etmiyorum.Program bunu istemiyormus cunku!
+    ortak_kat_verileri=input()
+    veri_ayir=ortak_kat_verileri.split(" ")#ortak katini alacagim verileri ayirip kullanabilecgim hale getiriyorum.
+    sayi1=int(veri_ayir[0])
+    sayi2=int(veri_ayir[1])
+    
+    
+    ortak_bolen_verileri=input()
+    verileri_ayir=ortak_bolen_verileri.split(" ")#ortak bolenlerini alacagim verileri ayirip kullanabilecgim hale getiriyorum.
+    sayi3=int(verileri_ayir[0])
+    sayi4=int(verileri_ayir[1])
+    sayi5=int(verileri_ayir[2])
+    
+    ortak_kat(sayi1,sayi2) #verileri fonksiyonlar icine yerlestiriyorum.
+    ortak_bolen(sayi3,sayi4,sayi5)
+
+    ortak_liste=[] #iki veridede ortak olanlari atacagim bir liste olusturuyorum.
+
+    for i in liste3:
+        for k in kume4:  #iki veriyi dolanip ortak olanlari buluyorum
+            if i==k:
+                ortak_liste.append(k)
+
+    print(len(ortak_liste)) #istenildigi gibi bu verilerin uzunlugunu buluyorum.
+            
+
+getTotalX() #fonk cagirarak baslatiyorum.
+
+    
+    
+
+
+            
