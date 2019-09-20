@@ -1,0 +1,29 @@
+from functools import reduce
+def tek_sayi(n): 
+    if n%2==1:
+        return(n)
+    
+def iki_kati(n): 
+    return 2*n
+
+def topla(k,l):
+    return k+l
+
+def sayi_listesi(*args): #istenilen sayida girilmesi icin args tanimlandi.
+    
+    liste=list(args)#listeyle islem yapmak daha rahat oldugundan buna cevirdim
+    
+    tek_liste=list(filter(tek_sayi,liste)) #filter fonk kullanildi.Liste cevrildi.Suzme islemi yapildi
+    
+    iki_kat_liste=list(map(iki_kati,tek_liste)) #map ile islem yapildi.Listeye yapildi
+    
+    print(reduce(topla,iki_kat_liste))
+
+sayi_listesi(1,2,3,4,5)
+
+    
+
+
+
+
+
