@@ -1,0 +1,25 @@
+def tek_sayi(n):
+    if n%2==1:
+        print("{} tek sayidir".format(n))
+
+def cift_sayi(n):
+    if n%2==0:
+        print("{} cift sayidir".format(n))
+
+def uce_bolunme(n):
+    if n%3==0:
+        print("{} ucun katidir".format(n))
+
+def bese_bolunme(n):
+    if n%5==0:
+        print("{} besin katidir".format(n))
+
+def sayikontrol(ilksayi,sonsayi):
+    for i in range(ilksayi,sonsayi+1):
+        tek_sayi(i)
+        cift_sayi(i)
+        uce_bolunme(i)
+        bese_bolunme(i)
+
+sayikontrol(1,10)
+    
