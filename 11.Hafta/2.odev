@@ -1,0 +1,68 @@
+class CepTelefonu():
+    rehber=[]
+    
+    @classmethod
+    def RehbereNoEkle(cls):
+        veri=input("Lutfen eklemek istediginiz no'yu giriniz: ")
+        for i in rehber:
+            if veri==i:
+                print('Bu numara daha once eklenmistir.Tekrar deneyiniz.')
+            else:    
+                rehber.append(veri)
+                print('{} nolu numara rehbere eklendi.'.format(veri))
+    @classmethod                  
+    def RehberdenNoSilme(cls):
+                      
+        veri=input("Lutfen silmek istediginiz no'yu giriniz: ")
+        for i in rehber:
+            if veri==i:
+                rehber.remove(veri)
+                print("{} nolu numara rehberden silindi.".format(veri))
+            else:
+                print("Boyle bir numara rehberde yer almamaktadir.")
+                
+    @classmethod           
+    def RehberiGoruntuleme(cls):
+        print("Rehberinizdeki numaralar")               
+        for i in rehber:           
+            print(i)
+            
+    @classmethod
+    def NoArama(cls):
+        RehberiGoruntuleme()               
+        arama=input("Rehberinizdeki numaralari goruyorsunuz.Lutfen aramak istediginiz no'yu giriniz: ")
+        for i in rehber:
+            if i==arama:
+                print("{} nolu numara araniyor...".format(arama))
+            else:
+                print("Bu numara rehberde yer almamaktadir.Lutfen rehberden bir numara seciniz.")
+                       
+    def __init__(self,marka,model,uretim_yili,tel_no):
+        self.marka=marka
+        self.model=model
+        self.uretim_yili=uretim_yili
+        self.tel_no=tel_no
+        self.rehber.append(self.tel_no)
+
+    def marka_goster(self):
+         return("Bu telefonun markasi {}".format(self.marka))
+
+    def model_goster(self):
+        return("Bu telefonun modeli {}".format(self.model))
+
+    def uretim_yili_goster(self):
+        return("Bu telefonun uretim yili {}".format(self.uretim_yili))
+                       
+    def tel_no_goster(self):
+        return("Bu telefonun no'su {}".format(self.tel_no))
+
+    @classmethod
+    def tel_rehberi(cls):
+        return("Bu telefonun rehberi {}".format(cls.rehber))
+
+telefon1=CepTelefonu('Nokia','3310','2000','05052168683')
+
+                       
+                       
+
+                    
