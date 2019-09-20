@@ -1,0 +1,109 @@
+pzt = [ { 'isim': 'Fonksiyonlara calis', 'sure': 180 },
+        { 'isim': 'ornek coz', 'sure': 120 },
+        { 'isim': 'odev kontrol', 'sure': 20 },
+        { 'isim': 'bayramlasma', 'sure': 200 } ]
+
+sali = [ { 'isim': 'gelecek haftaya hazirlik', 'sure': 240 },
+         { 'isim': 'ornek cozumlerine devam et', 'sure': 180 },
+         { 'isim': 'kahve molasi', 'sure': 10 },
+         { 'isim': 'kitap oku', 'sure': 200 },
+         { 'isim': 'spor yap', 'sure': 40 } ]
+
+def saate_cevir(n):
+    return(round(n/60))
+
+def sureleri_saate_cevir():
+    pzt_sure=[]
+    for i in range(len(pzt)):
+        eleman=pzt[i]['sure']
+        pzt_sure.append(eleman)
+    
+    pzt_saat=list(map(saate_cevir,pzt_sure))
+
+    sali_sure=[]
+    for i in range(len(sali)):
+        eleman=sali[i]['sure']
+        sali_sure.append(eleman)
+    
+    sali_saat=list(map(saate_cevir,sali_sure))
+
+    for i in range(len(pzt)):
+        pzt[i]['sure']=pzt_saat[i]
+
+    for i in range(len(sali)):
+        sali[i]['sure']=sali_saat[i]
+        
+    print(pzt)
+    print(sali)
+
+    
+
+def iki_saat_alti(n):
+    if int(n)>=2:
+        return int(n)
+
+def ayiklama():
+    sureleri_saate_cevir()
+
+    global pzt_saat
+    pzt_saat=[]
+    for i in range(len(pzt)):
+        pzt_saat.append(pzt[i]["sure"])
+        
+    list(filter(iki_saat_alti,pzt_saat))
+
+    global sali_saat
+    sali_saat=[]
+    for i in range(len(sali)):
+        sali_saat.append(sali[i]["sure"])
+        
+    list(filter(iki_saat_alti,sali_saat))
+
+
+
+def saat_basi_puan(sayi1,sayi2):
+    return (sayi1+sayi2)
+
+def puanlama():
+    ayiklama()
+    from functools import reduce
+    pazartesipuan=20*(reduce(saat_basi_puan,pzt_saat))
+    salipuan=20*(reduce(saat_basi_puan,sali_saat))
+    print("Pazartesi gunu kazanilan puan {}, Sali gunu kazanilan puan {}.".format(pazartesipuan,salipuan))
+    
+
+puanlama()
+    
+    
+    
+
+    
+
+
+
+
+
+    
+        
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
