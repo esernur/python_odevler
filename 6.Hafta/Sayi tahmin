@@ -1,0 +1,33 @@
+import random
+print("""
+Lutfen aklinizdan 0 ile 100 arasinda bir sayi tutunuz.
+Bilgisayarin tahmini sizin tahmininizden buyukse inmesi icin '-' tusuna,
+kucukse buyutmesi icin '+' tusuna basiniz.Tahmin dogruysa entere basin.
+""")
+
+
+min_tahmin=0
+max_tahmin=100
+
+while True:
+    yeni_tahmin=random.randint(min_tahmin,max_tahmin)
+    print('Tahminim {}'.format(yeni_tahmin))
+    kontrol=input("Yonergeye uygun veri girisi yapiniz: ")  
+    if kontrol=='-': 
+        max_tahmin=yeni_tahmin-1
+        if max_tahmin==min_tahmin:
+            print('Aradigimiz sayi {}'.format(max_tahmin))
+            break
+
+      
+    elif kontrol=='+':
+       min_tahmin=yeni_tahmin+1
+       if max_tahmin==min_tahmin:
+            print('Aradigimiz sayi {}'.format(min_tahmin))
+            break
+
+    elif kontrol=="":
+        print('Sayiyi buldum!!')
+        break
+        
+    
