@@ -1,0 +1,80 @@
+import random
+import time
+class MuzikCalar():
+    liste=[]
+    def __init__(self,sarki_adi,sanatci):
+        self.sarki_adi=sarki_adi
+        self.sanatci=sanatci
+
+    @classmethod
+    def liste_sifirla(cls):
+        print("Liste sifirlaniyor...")
+        MuzikCalar.liste.clear()
+
+    @classmethod
+    def sarki_ekleme(cls):
+        sarki_ismi=input("Lutfen eklemek istediginiz sarkinin ismini giriniz: ")
+        MuzikCalar.liste.append(sarki_ismi)
+        veri="{} isimli sarki listeye eklendi".format(sarki_ismi)
+        print(veri)
+
+    @classmethod
+    def sarki_silme(cls):
+        silinecek_sarki=input("Lutfen silmek istediginiz sarki ismini yaziniz")
+        for i in MuzikCalar.liste:
+            if i==silinecek_sarki:
+                print("{} isimli sarki listeden siliniyor..".format(i))
+                MuzikCalar.liste.remove(i)
+
+            else:
+                print("Bu isimde bir sarki listede yer almamaktadir.Tekrar deneyiniz")
+    @classmethod
+    def sonraki_parcayi_cal(cls):
+        rastgele=random.randint(0,len(MuzikCalar.liste))
+        if rastgele==len(MuzikCalar.liste)-1:
+            print("Bu listenin son parcasi basa donuluyor..")
+            time.sleep(2)
+            print("{} isimli parca caliniyor.".format(MuzikCalar.liste[0]))
+        else:
+            print("Suan calan parca {}.Listenin bir sonraki parcasi {} caliniyor..".format(MuzikCalar.liste[rastgele],MuzikCalar.liste[rastgele+1]))
+            time.sleep(2)
+            print("Calan parca {} ".format(MuzikCalar.liste[rastgele+1]))
+
+    @classmethod
+    def onceki_parcayi_cal(cls):
+        rastgele=random.randint(0,len(MuzikCalar.liste))
+        if rastgele==0:
+            print("Bu listenin ilk sarkisi, sona gidiliyor..")
+            time.sleep(2)
+            print("Calan parca {}".format(MuzikCalar.liste[len(liste)-1]))
+
+        else:
+            print("Suan calan parca {}.Listenin bir onceki parcasi {} caliniyor..".format(MuzikCalar.liste[rastgele],MuzikCalar.liste[rastgele-1]))
+            time.sleep(2)
+            print("Calan parca {} ".format(MuzikCalar.liste[rastgele-1]))
+
+    @classmethod
+    def karisik_cal(cls):
+        rastgele=random.randint(0,len(MuzikCalar.liste)-1)
+        print("{} isimli parca caliniyor..".format(MuzikCalar.liste[rastgele]))
+
+    @classmethod
+    def ListeyiGoruntule(cls):
+        print("Muzik listesi: ")
+        for i in MuzikCalar.liste:
+            print(i)
+
+    
+
+muzik1=MuzikCalar("aldatildik","rengin")
+MuzikCalar.sarki_ekleme()
+MuzikCalar.sarki_ekleme()
+MuzikCalar.karisik_cal()
+        
+            
+        
+        
+        
+        
+        
+        
